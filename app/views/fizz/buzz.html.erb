@@ -1,0 +1,79 @@
+<h1>Web FizzBuzz-Spiel</h1>
+
+<p><% i=0 %>  #Ausgabe von 1...100; wenn durch 3 teilbar ->Fizz; durch 5 teilbar--> Bazz
+
+<% while i<100 do %>
+  <% i=i+1 %>
+
+  <% if i%3==0 && i%5==0 %>
+     FizzBazz
+  <% elsif i%3==0 %>
+    Fizz
+  <% elsif i%5==0 %>
+    Bazz
+  <% else %>
+  	<%= i %>
+  <% end %>
+
+<% end %>
+</p>
+
+<table border="1">
+ <tr>
+ <th>Zahl</th>
+ <th>Teilbar durch <%= @fizz_number %></th>
+ <th>Teilbar durch <%= @buzz_number %></th>
+ <th><%= @fizz_name + @buzz_name %></th>
+ </tr>
+
+ 	<% i=0 %>							
+ 	<% while i<@max_number do %>		
+ 	<% i+=1 %>	
+
+   	<% if i % @fizz_number==0 && i % @buzz_number==0 %>     
+   	<tr bgcolor="#FFFF00">
+   	<% else %>			
+   	<tr>
+   	<% end %>
+
+ <td>
+  <%= i %>
+   </td>
+
+  <td>
+   	<% if i % @fizz_number==0 %>
+    <%= "X" %>
+    <% else %>
+    <%=  %>
+    <% end %>
+	</td>
+
+	<td>
+   	<% if i % @buzz_number==0 %>
+    <%= "X" %>
+    <% else %>
+    <%=  %>
+    <% end %>
+	</td>
+
+	<td>
+		<% if i % @fizz_number==0 && i % @buzz_number==0 %>
+     <%= @fizz_name + @buzz_name  %>
+  <% elsif i % @fizz_number==0 %>
+    <%= @fizz_name %>
+  <% elsif i % @buzz_number==0 %>
+    <%= @buzz_name %>
+  <% else %>
+  	<%= i %>
+  <% end %>
+
+	</td>
+
+ </tr>
+  <% end %>
+
+
+
+
+ 
+ </table>
